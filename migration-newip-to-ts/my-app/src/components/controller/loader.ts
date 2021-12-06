@@ -11,7 +11,7 @@ class Loader {
 
     getResp(
         { endpoint = "string", options = {} },
-        callback = () => {
+        callback = (): void => {
             console.error('No callback for GET response');
         }
     ): void {
@@ -30,7 +30,7 @@ class Loader {
 
     makeUrl(options: {}, endpoint: string): string {
         const urlOptions = { ...this.options, ...options} as {[key: string]: string};
-        let url = `${this.baseLink}${endpoint}?`;
+        let url: string = `${this.baseLink}${endpoint}?`;
 
         Object.keys(urlOptions).forEach((key) => {
             url += `${key}=${urlOptions[key]}&`;
