@@ -27,8 +27,9 @@
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
+    "clean-webpack-plugin": "^4.0.0",
     "create-rss-app": "^0.2.4",
-    "ts-loader": "^9.2.6",
-    "source-map-loader": "^3.0.0"
+    "source-map-loader": "^3.0.0",
+    "ts-loader": "^9.2.6"
   }
 }
