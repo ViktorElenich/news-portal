@@ -1,17 +1,18 @@
+export type CallbackType<T> = (data: T) => void;
 class Loader {
 
     baseLink: string;
     
-    options: {};
+    options: Record<string, unknown>;
 
     constructor(baseLink: string, options: {apiKey: string}) {
         this.baseLink = baseLink;
         this.options = options;
     }
 
-    getResp(
+    getResp<T>(
         { endpoint = "string", options = {} },
-        callback = (): void => {
+        callback: CallbackType<T> = (): void => {
             console.error('No callback for GET response');
         }
     ): void {
@@ -28,9 +29,9 @@ class Loader {
         return res;
     }
 
-    makeUrl(options: {}, endpoint: string): string {
+    makeUrl(options: Record<string, unknown>, endpoint: string): string {
         const urlOptions = { ...this.options, ...options} as {[key: string]: string};
-        let url: string = `${this.baseLink}${endpoint}?`;
+        let url = `${this.baseLink}${endpoint}?`;
 
         Object.keys(urlOptions).forEach((key) => {
             url += `${key}=${urlOptions[key]}&`;
@@ -39,7 +40,7 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    load(method: string, endpoint: string, callback: Function, options = {}): void {
+    load<T>(method: string, endpoint: string, callback: CallbackType<T>, options = {}): void {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())

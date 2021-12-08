@@ -1,13 +1,12 @@
-import { IDataNews } from '../view/news/news';
-import { SourcesData } from '../view/sources/sources';
 import AppLoader from './appLoader';
+import { CallbackType } from './loader';
 
 class AppController extends AppLoader {
-    getSources(callback: (data?: {sources: Array<SourcesData>}) => void): void {
+    getSources<T>(callback: CallbackType<T>): void {
         super.getResp({endpoint: 'sources', }, callback);
     }
     
-    getNews(e: Event, callback: (data?: IDataNews ) => void): void {
+    getNews<T>(e: Event, callback: CallbackType<T>): void {
         let target: HTMLElement = <HTMLElement>e.target;
         const newsContainer: HTMLElement = <HTMLElement>e.currentTarget;
 
