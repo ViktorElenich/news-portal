@@ -3,7 +3,7 @@ class Loader {
 
     baseLink: string;
     
-    options: Record<string, unknown>;
+    options: {apiKey: string};
 
     constructor(baseLink: string, options: {apiKey: string}) {
         this.baseLink = baseLink;

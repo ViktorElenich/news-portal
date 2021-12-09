@@ -11,10 +11,10 @@ class Sources {
         const sourceItemTemp: HTMLTemplateElement = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
 
         data.forEach((item: SourcesData) => {
-            const sourceClone: Node = <HTMLElement>sourceItemTemp.content.cloneNode(true);
+            const sourceClone = <HTMLElement>sourceItemTemp.content.cloneNode(true);
 
-            (<HTMLElement>sourceClone).querySelector('.source__item-name').textContent = item.name;
-            (<HTMLElement>sourceClone).querySelector('.source__item').setAttribute('data-source-id', item.id);
+            sourceClone.querySelector('.source__item-name').textContent = item.name;
+            sourceClone.querySelector('.source__item').setAttribute('data-source-id', item.id);
 
             fragment.append(sourceClone);
         });
