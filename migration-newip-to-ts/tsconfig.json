@@ -15,8 +15,13 @@
       "experimentalDecorators": true,
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true,
-      "outDir": "news-portal"
+      "outDir": "my-app/news-portal"
     },
-    "exclude": ["node_modules", "news-portal"],
-    "include": ["src/**/*", "modules.d.ts"]
+    "exclude": ["node_modules",
+      "my-app/news-portal"
+    ],
+    "include": [
+      "src/**/*",
+      "modules.d.ts"
+    ]
   }

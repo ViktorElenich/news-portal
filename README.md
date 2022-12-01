@@ -1,1 +1,3 @@
-https://rolling-scopes-school.github.io/viktorelenich-JSFE2021Q3/news-portal
+# News Portal
+
+https://news-portal-viktor-elenich.netlify.app/
