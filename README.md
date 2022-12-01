@@ -1,2 +1,3 @@
-# viktorelenich-JSFE2021Q3
-Private repository for @viktorelenich
+# News Portal
+
+https://news-portal-viktor-elenich.netlify.app/
