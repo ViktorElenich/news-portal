@@ -1,4 +1,10 @@
 export type CallbackType<T> = (data: T) => void;
+
+enum Errors {
+    Unauthorized = 401,
+    NotFound = 404
+}
+
 class Loader {
 
     baseLink: string;
@@ -21,7 +27,7 @@ class Loader {
 
     errorHandler(res: Response): Response{
         if (!res.ok) {
-            if (res.status === 401 || res.status === 404)
+            if (res.status === Errors.Unauthorized || res.status === Errors.NotFound)
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }
