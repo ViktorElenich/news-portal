@@ -1,0 +1,34 @@
+.pagination {
+    max-width: 1920px;
+    margin: 30px auto;
+}
+
+.alphabet__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+    list-style-type: none;
+}
+
+.alphabet__letter {
+    font-size: 26px;
+    margin: 0 7px;
+    color: #30c5ff;
+    transition: 0.3s;
+}
+
+.alphabet__letter:hover {
+    cursor: pointer;
+    color: #69db7e;
+    transform: translateY(-0.15em);
+}
+
+.alphabet__letter.active {
+    color: #69db7e;
+    transform: translateY(-0.15em);
+}
