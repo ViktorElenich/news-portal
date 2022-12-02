@@ -6,7 +6,7 @@ import { SourcesData } from '../view/sources/sources';
 class App {
 
     controller: AppController;
-    
+
     view: AppView;
     
     constructor() {
@@ -14,11 +14,11 @@ class App {
         this.view = new AppView();
     }
 
-    start(): void {
+    start(letter: string): void {
         document
             .querySelector('.sources')
             .addEventListener('click', (e: Event) => this.controller.getNews(e, (data: IDataNews) => this.view.drawNews(data)));
-        this.controller.getSources((data: {sources: SourcesData[]}) => this.view.drawSources(data));
+        this.controller.getSources((data: {sources: SourcesData[]}) => this.view.drawSources(data, letter));
     }
 }
 

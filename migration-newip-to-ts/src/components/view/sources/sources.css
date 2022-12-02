@@ -6,6 +6,20 @@
     overflow: auto;
     align-items: center;
     font: 300 1em 'Fira Sans', sans-serif;
+
+}
+.sources::-webkit-scrollbar {
+    height: 8px;
+    border-radius: 15px;
+}
+.sources::-webkit-scrollbar-track {
+    background: #30c5ff;
+}
+.sources::-webkit-scrollbar-thumb {
+    background-color: #0f7020;
+    border-radius: 20px;
+    border: 1px solid #30c5ff;
+    cursor: pointer;
 }
 
 .source__item {
