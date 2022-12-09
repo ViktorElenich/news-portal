@@ -3,6 +3,7 @@ import './pagination.css';
 
 class Pagination  {
   private _app: App;
+
   public letter: string;
 
   constructor() {

@@ -21,12 +21,12 @@ export interface IDataNews{
 
 class News {
     draw(data: Array<IData>): void {
-        const news: IData[] = data.length >= 10 ? data.filter((_item: IData, idx: number) => idx < 10) : data;
+        const news: IData[] = data.length >= 10 ? data.filter((_item: Readonly<IData>, idx: number) => idx < 10) : data;
 
         const fragment: DocumentFragment = document.createDocumentFragment();
         const newsItemTemp: HTMLTemplateElement = document.querySelector('#newsItemTemp') as HTMLTemplateElement;
 
-        news.forEach((item: IData, idx: number) => {
+        news.forEach((item: Readonly<IData>, idx: number) => {
             const newsClone = <HTMLElement>newsItemTemp.content.cloneNode(true);
 
             if (idx % 2) newsClone.querySelector('.news__item').classList.add('alt');

@@ -11,7 +11,7 @@ class Sources {
         const sourceItemTemp: HTMLTemplateElement = document.querySelector('#sourceItemTemp') as HTMLTemplateElement;
         (document.querySelector('.sources') as HTMLElement).innerHTML = '';
 
-        data.forEach((item: SourcesData) => {
+        data.forEach((item: Readonly<SourcesData>) => {
             if (item.name[0] === letter) {
                 const sourceClone: Element = sourceItemTemp.content.cloneNode(true) as Element;
 
